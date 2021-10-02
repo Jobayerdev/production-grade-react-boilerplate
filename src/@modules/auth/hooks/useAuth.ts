@@ -19,9 +19,7 @@ export const useAuth = () => {
 		storage.clear()
 		window.location.assign(window.location.origin as unknown as string)
 	}
-	const loadUserFn = () => {
-		
-	}
+	const loadUserFn = () => {}
 	const isAuthenticated = storage.getToken() ? true : false
 	return {
 		loginFn,

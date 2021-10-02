@@ -4,7 +4,7 @@ import {
 	MenuFoldOutlined,
 	MenuUnfoldOutlined,
 	PoweroffOutlined,
-	UserOutlined
+	UserOutlined,
 } from "@ant-design/icons"
 import React, { useState } from "react"
 
@@ -88,7 +88,7 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
 						{isCollapsed ? (
 							<img
 								className="logo"
-								src={IMAGES.LogoSmall}
+								src={IMAGES.Logo}
 								style={{ width: 30 }}
 								alt="logo"
 							/>
@@ -149,122 +149,14 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
 							key={String(`${Paths.DefaultDashboard}`)}>
 							Analytics
 						</Menu.Item>
-						<SubMenu key="Sub1" icon={<UserOutlined />} title="User">
+
+						<SubMenu key="Sub4" icon={<UserOutlined />} title="Banners">
 							<Menu.Item
-								onClick={() => navigate(Paths.UserCreate, { replace: true })}
-								key={Paths.UserCreate}>
-								Create
-							</Menu.Item>
-							<Menu.Item
-								onClick={() => navigate(Paths.UserList)}
-								key={Paths.UserList}>
+								onClick={() => navigate(Paths.Banners, { replace: true })}
+								key={Paths.Banners}>
 								List
 							</Menu.Item>
 						</SubMenu>
-
-						<SubMenu key="Sub2" icon={<UserOutlined />} title="Permission">
-							<Menu.Item
-								onClick={() => navigate(Paths.PermissionsList, { replace: true })}
-								key={Paths.PermissionsList}>
-								Permissions
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() =>
-									navigate(Paths.PermissionsTypeList, { replace: true })
-								}
-								key={Paths.PermissionsTypeList}>
-								Permission Type
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.RolesList, { replace: true })}
-								key={Paths.RolesList}>
-								Roles
-							</Menu.Item>
-						</SubMenu>
-
-						<SubMenu key="Sub3" icon={<UserOutlined />} title="Pets">
-							<Menu.Item
-								onClick={() => navigate(Paths.PetLifeStyleList, { replace: true })}
-								key={Paths.PetLifeStyleList}>
-								Pet Life Style
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.PetProfileList, { replace: true })}
-								key={Paths.PetProfileList}>
-								Pet Profiles
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.PetTypeList, { replace: true })}
-								key={Paths.PetTypeList}>
-								Pet Type List
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.PetBreedsList)}
-								key={Paths.PetBreedsList}>
-								Pet Breeds
-							</Menu.Item>
-						</SubMenu>
-
-						<SubMenu key="Sub4" icon={<UserOutlined />} title="Common">
-							<Menu.Item
-								onClick={() => navigate(Paths.PaymentMethods, { replace: true })}
-								key={Paths.PaymentMethods}>
-								Payment Methods
-							</Menu.Item>
-						</SubMenu>
-
-						<Menu.Item
-							icon={<UserOutlined />}
-							onClick={() => navigate(Paths.Banners)}
-							key={Paths.Banners}>
-							Banners
-						</Menu.Item>
-
-						<SubMenu key="Sub5" icon={<UserOutlined />} title="Service">
-							<Menu.Item
-								onClick={() => navigate(Paths.ServicesList, { replace: true })}
-								key={Paths.ServicesList}>
-								Service List
-							</Menu.Item>
-							<Menu.Item
-								onClick={() => navigate(Paths.ServiceCategoryList, { replace: true })}
-								key={Paths.ServiceCategoryList}>
-								Category List
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.ServicePackageList, { replace: true })}
-								key={Paths.ServicePackageList}>
-								Packages
-							</Menu.Item>
-						</SubMenu>
-
-						<SubMenu key="Sub6" icon={<UserOutlined />} title="E-commerce">
-							<Menu.Item
-								onClick={() => navigate(Paths.Departments, { replace: true })}
-								key={Paths.Departments}>
-								Departments
-							</Menu.Item>
-
-							<Menu.Item
-								onClick={() => navigate(Paths.Brands, { replace: true })}
-								key={Paths.Brands}>
-								Brands
-							</Menu.Item>
-						</SubMenu>
-
-						<Menu.Item
-							icon={<UserOutlined />}
-							onClick={() => navigate(Paths.Appointments)}
-							key={Paths.Appointments}>
-							Appointments
-						</Menu.Item>
-
 					</Menu>
 				</Sider>
 				<Layout style={styles.layout as any}>

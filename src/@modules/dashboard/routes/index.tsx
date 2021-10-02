@@ -1,4 +1,4 @@
-import DefaultDashboardPage from "./default-dashboard-page-component"
+import DefaultDashboardPage from "./DefaultDashboardPage"
 import { Navigate } from "react-router-dom"
 
 export const DashboardRoutes = [

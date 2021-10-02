@@ -30,7 +30,7 @@ const Login = () => {
 					borderRadius: 10,
 				}}>
 				<img
-					style={{ maxWidth: 180, margin: "20px auto", display: "block" }}
+					style={{ maxWidth: 100, margin: "20px auto", display: "block" }}
 					src={IMAGES.Logo}
 					alt=""
 				/>
@@ -41,7 +41,7 @@ const Login = () => {
 				</Typography.Title>
 				<Form
 					name="normal_login"
-					initialValues={{ phoneNumber: "01636476123", password: "123456" }}
+					initialValues={{ phoneNumber: "01900000", password: "123456" }}
 					onFinish={(val) => {
 						loginFn.mutate(val)
 					}}>

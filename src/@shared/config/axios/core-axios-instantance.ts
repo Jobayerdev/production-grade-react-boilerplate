@@ -23,29 +23,11 @@ CoreAxiosInstance.interceptors.request.use(
 		return config
 	},
 	(error: any) => {
-		
 		return Promise.reject(error)
 	}
 )
 CoreAxiosInstance.interceptors.response.use(
 	(response: any) => {
-		// if (response?.data?.success) {
-		// 	switch (response?.config?.method.toUpperCase()) {
-		// 		case "POST":
-		// 			notification.success({
-		// 				message: "Created Success",
-		// 				type: "success",
-		// 			})
-		// 			return response
-
-		// 		case "PUT":
-		// 			notification.success({
-		// 				message: "Update Success",
-		// 				type: "success",
-		// 			})
-		// 			return response
-		// 	}
-		// }
 		return response
 	},
 	(error: AxiosError) => {
