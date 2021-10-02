@@ -1,13 +1,13 @@
 import { Navigate, useRoutes } from "react-router-dom"
 
 import { AuthRoutes } from "@modules/auth"
-import Login from "@modules/auth/routes/login.component"
+import { LandingRoutes } from "@modules/landing/routes"
 
 const PublicRoutes = () => {
 	return useRoutes([
 		{
 			path: "",
-			element: <Login />,
+			children: LandingRoutes,
 		},
 		{
 			path: "auth",
