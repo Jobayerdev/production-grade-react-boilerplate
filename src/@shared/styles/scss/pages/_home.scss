@@ -1,0 +1,86 @@
+.pet-profile-form {
+    .ant-upload {
+        width: 100%;
+        display: block;
+        .ant-btn {
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+            color: #aaaaaa;
+        }
+    }
+
+    .ant-form-item {
+        .ant-form-item-label {
+            padding: 0;
+            label {
+                display: block;
+                font-size: 20px;
+                font-weight: 600;
+                color: #8a8a8a;
+            }
+            label::before {
+                display: none;
+            }
+        }
+        .ant-form-item-control-input-content {
+            input,
+            textarea,
+            .ant-select-selection-item {
+                font-size: 18px;
+                font-weight: 600;
+                color: #333333;
+            }
+            input::placeholder,
+            textarea::placeholder,
+            .ant-select-selection-placeholder {
+                font-size: 18px;
+                font-weight: 600;
+                color: #aaaaaa;
+            }
+
+            .ant-radio-group {
+                .ant-radio-button-wrapper {
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: #aaaaaa;
+                }
+                .ant-radio-button-wrapper.ant-radio-button-wrapper-checked {
+                    // color: #8d8d8d;
+                    // background-color: #f0f0f0;
+                    // border: 1px solid #ddd;
+                    color: white;
+                }
+                // .ant-radio-button-wrapper.ant-radio-button-wrapper-checked::before {
+                //     background: none;
+                //     width: 50px;
+                // }
+            }
+        }
+    }
+
+    // .ant-radio-button-wrapper:first-child {
+    //     border-radius: 5px 0 0 5px;
+    // }
+
+    // .ant-radio-button-wrapper:last-child {
+    //     border-radius: 0 5px 5px 0;
+    // }
+}
+
+.ant-table-thead {
+    tr {
+        th {
+            &:last-child {
+                text-align: right;
+                padding-right: 80px;
+            }
+        }
+    }
+}
+
+.ant-table-cell{
+    &:last-child{
+        text-align: right;
+    }
+}

@@ -1,0 +1,33 @@
+.ant-page-header {
+	padding: 10px;
+	padding-top: 0;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	font-size: 16px;
+	border-bottom: 1px solid #dddddd59;
+}
+
+.ant-page-header-back {
+	height: 30px;
+	width: 30px;
+	background: #f17626;
+	font-size: 22px;
+	border-radius: 4px;
+	margin-right: 15px;
+	display: flex;
+	justify-content: center;
+	line-height: 1;
+	align-items: center;
+	cursor: pointer;
+	color: #fff;
+}
+.ant-page-header-back svg {
+	color: #fff;
+}
+.ant-page-header-back-button {
+	font-size: 17px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -4px;
+}

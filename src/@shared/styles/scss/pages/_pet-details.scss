@@ -1,0 +1,104 @@
+.pet-details {
+    .pet-images {
+        margin-bottom: 50px;
+        border-radius: 30px;
+        overflow: hidden;
+        .image-holder {
+            width: 100%;
+            height: 600px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .pet-primary-info {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        background: #f4f2ef;
+        @media (max-width: 991px) {
+            margin-bottom: 0;
+        }
+        .title {
+            color: #393d72;
+            font-size: 20px;
+            font-weight: 700;
+            padding-bottom: 15px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .primary-info-box {
+            ul {
+                li {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .pet-owner-info {
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 20px;
+        background: #f4f2ef;
+        @media (max-width: 991px) {
+            margin-bottom: 0;
+        }
+        .title {
+            color: #393d72;
+            font-size: 20px;
+            font-weight: 700;
+            padding-bottom: 15px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        .owner-info-box {
+            ul {
+                li {
+                    font-size: 16px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+
+    .pet-details-area {
+        margin-top: 50px;
+        .d-title {
+            margin-bottom: 20px;
+            text-align: center;
+            h1 {
+                color: #333333;
+                font-size: 40px;
+                font-weight: 700;
+                text-decoration: underline;
+            }
+        }
+        .more-details {
+            .info-box {
+                background-color: white;
+                text-align: center;
+                padding: 10px;
+                border: 1px solid #ddd;
+
+                h4 {
+                    font-size: 20px;
+                    color: #888888;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                }
+                span {
+                    font-size: 16px;
+                    color: #a3a3a3;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+}
