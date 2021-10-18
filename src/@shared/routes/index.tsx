@@ -5,6 +5,7 @@ import { useAuth } from "@modules/auth"
 
 const AppRoutes = () => {
 	const { isAuthenticated } = useAuth()
+
 	return isAuthenticated ? <ProtectedRoutes /> : <PublicRoutes />
 }
 

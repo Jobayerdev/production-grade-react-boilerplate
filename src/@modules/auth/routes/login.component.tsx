@@ -3,11 +3,8 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons"
 
 import { IMAGES } from "@shared/assets"
 import React from "react"
-import { useAuth } from "../hooks/useAuth"
 
 const Login = () => {
-	const { loginFn } = useAuth()
-
 	return (
 		<div
 			className="auth-page"
@@ -42,9 +39,7 @@ const Login = () => {
 				<Form
 					name="normal_login"
 					initialValues={{ phoneNumber: "01900000", password: "123456" }}
-					onFinish={(val) => {
-						loginFn.mutate(val)
-					}}>
+					onFinish={(val) => {}}>
 					<Form.Item
 						name="phoneNumber"
 						rules={[
@@ -72,7 +67,6 @@ const Login = () => {
 
 					<Form.Item>
 						<Button
-							loading={loginFn.isLoading}
 							size="large"
 							style={{ display: "block", width: "100%" }}
 							type="primary"
@@ -80,7 +74,6 @@ const Login = () => {
 							Sign in
 						</Button>
 					</Form.Item>
-					{/* Or <a href="/">register now!</a> */}
 				</Form>
 			</Card>
 		</div>

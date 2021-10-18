@@ -4,12 +4,10 @@ import {
 	MenuFoldOutlined,
 	MenuUnfoldOutlined,
 	PoweroffOutlined,
-	UserOutlined,
 } from "@ant-design/icons"
 import React, { useState } from "react"
 
 import { IMAGES } from "@shared/assets"
-import { Paths } from "@shared/enums"
 import { useAuth } from "@modules/auth"
 import { useNavigate } from "react-router-dom"
 import { useResponsive } from "ahooks"
@@ -145,18 +143,10 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
 						defaultOpenKeys={[String(pathname)]}>
 						<Menu.Item
 							icon={<DashboardOutlined />}
-							onClick={() => navigate(Paths.DefaultDashboard)}
-							key={String(`${Paths.DefaultDashboard}`)}>
+							onClick={() => navigate("/")}
+							key={"/"}>
 							Analytics
 						</Menu.Item>
-
-						<SubMenu key="Sub4" icon={<UserOutlined />} title="Banners">
-							<Menu.Item
-								onClick={() => navigate(Paths.Banners, { replace: true })}
-								key={Paths.Banners}>
-								List
-							</Menu.Item>
-						</SubMenu>
 					</Menu>
 				</Sider>
 				<Layout style={styles.layout as any}>
@@ -185,4 +175,3 @@ const MainLayout: React.FC<IFProps> = ({ children }) => {
 }
 
 export default MainLayout
-const { SubMenu } = Menu

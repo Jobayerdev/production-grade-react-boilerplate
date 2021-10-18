@@ -9,6 +9,7 @@
 		"ahooks": "^2.10.9",
 		"antd": "^4.16.12",
 		"axios": "^0.21.1",
+		"craco-less": "^1.20.0",
 		"draft-js": "^0.11.7",
 		"draftjs-to-html": "^0.9.1",
 		"history": "^5.0.0-beta.4",

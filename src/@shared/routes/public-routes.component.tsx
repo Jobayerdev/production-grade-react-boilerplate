@@ -10,7 +10,7 @@ const PublicRoutes = () => {
 		},
 		{
 			path: "*",
-			element: <Navigate to="/" />,
+			element: <Navigate to="/auth" />,
 		},
 	])
 }
