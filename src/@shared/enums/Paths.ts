@@ -1,10 +1,5 @@
 export enum Paths {
 	root = "/",
-
-	//!Dashboard
+	//?Dashboard
 	Dashboard = "/dashboard/",
-	DefaultDashboard = "/dashboard/default/",
-
-	//Banners
-	Banners = "/banners",
 }

@@ -1,6 +1,5 @@
 import { Outlet, useRoutes } from "react-router-dom"
 
-import { BannersRoutes } from "@modules/banners"
 import { DashboardRoutes } from "@modules/dashboard"
 import DefaultDashboardPage from "@modules/dashboard/routes/DefaultDashboardPage"
 import MainLayout from "@shared/components/layout/main-layout.component"
@@ -21,10 +20,6 @@ const ProtectedRoutes = () => {
 		{
 			path: "dashboard",
 			children: DashboardRoutes,
-		},
-		{
-			path: "banners",
-			children: BannersRoutes,
 		},
 	]
 

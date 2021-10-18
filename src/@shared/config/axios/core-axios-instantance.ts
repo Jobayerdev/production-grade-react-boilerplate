@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios"
 
 import { ENV } from "./../../../ENV"
-import { notification } from "antd"
+import { message } from "antd"
 import { storage } from "@shared/utils"
 
 const headers = {
@@ -36,11 +36,7 @@ CoreAxiosInstance.interceptors.response.use(
 			window.location.assign(window.location.origin as unknown as string)
 		} else if (error.response?.data?.success === false) {
 			error.response?.data?.errorMessages?.map((x: string) => {
-				return notification.error({
-					message: x,
-					duration: 100,
-					type: "error",
-				})
+				return message.error(x)
 			})
 		}
 		return error
