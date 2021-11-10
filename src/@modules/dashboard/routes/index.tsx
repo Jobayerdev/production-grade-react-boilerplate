@@ -1,3 +1,3 @@
-import DefaultDashboardPage from "./DefaultDashboardPage"
+import DefaultDashboardPage from './DefaultDashboardPage'
 
-export const DashboardRoutes = [{ path: "", element: <DefaultDashboardPage /> }]
+export const DashboardRoutes = [{ path: '', element: <DefaultDashboardPage /> }]

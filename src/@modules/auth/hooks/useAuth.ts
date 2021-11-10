@@ -1,4 +1,4 @@
-import { storage } from "@shared/utils"
+import { storage } from '@shared/utils'
 
 export const useAuth = () => {
 	const loginFn = () => {}
