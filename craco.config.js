@@ -1,16 +1,16 @@
-const path = require('path')
-const CracoLessPlugin = require('craco-less')
+const path = require("path")
+const CracoLessPlugin = require("craco-less")
 
 module.exports = {
-	style: {
-		postcss: {
-			plugins: [require('tailwindcss'), require('autoprefixer')],
-		},
-	},
 	webpack: {
 		alias: {
-			'@shared': path.resolve(__dirname, './src/@shared'),
-			'@modules': path.resolve(__dirname, './src/@modules'),
+			"@application": path.resolve(__dirname, "./src/@application"),
+			"@features": path.resolve(__dirname, "./src/@features"),
+		},
+	},
+	style: {
+		postcss: {
+			plugins: [require("tailwindcss"), require("autoprefixer")],
 		},
 	},
 	plugins: [
@@ -19,7 +19,6 @@ module.exports = {
 			options: {
 				lessLoaderOptions: {
 					lessOptions: {
-						modifyVars: { '@primary-color': 'red' },
 						javascriptEnabled: true,
 					},
 				},

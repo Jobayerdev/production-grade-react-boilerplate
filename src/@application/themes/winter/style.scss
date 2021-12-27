@@ -1,0 +1,48 @@
+.winter-layout {
+	@apply h-full relative min-h-screen;
+
+	.winter-layout__sider {
+		@apply bg-white border-r border-solid relative z-50 h-full;
+	}
+	.header {
+		@apply bg-white border-solid border-b flex items-center justify-between p-3 sm:px-5 lg:px-10;
+		@apply fixed top-0 left-0 right-0 z-20;
+
+		.header__left {
+			@apply flex items-center;
+		}
+		.header__right {
+			@apply flex items-center space-x-3  lg:space-x-10;
+		}
+		.header__page-title {
+			@apply text-xs lg:text-base font-semibold text-secondary;
+		}
+		.header__nav {
+			@apply hidden lg:inline-block border-r border-solid border-light pr-5;
+		}
+		.header__keys {
+			@apply hidden lg:inline-block;
+		}
+		.header__actions__avater {
+			@apply h-5 w-5 lg:h-8 lg:w-8 rounded-full mr-1 lg:mr-2;
+		}
+		.header__actions_username {
+			@apply text-xs lg:text-sm font-medium text-secondary mr-1 lg:mr-2;
+		}
+	}
+	.winter-layout__inner {
+		background: #f6f9ff;
+		margin-top: 64px;
+		.winter-layout__content {
+			@apply p-3 sm:px-5 lg:px-10;
+		}
+	}
+}
+.winter__dropdown {
+	.winter__dropdown__head {
+		@apply p-4 pr-10 border-gray-100 border-b border-solid relative cursor-pointer;
+	}
+	.winter__dropdown__item {
+		@apply px-3 pb-3;
+	}
+}

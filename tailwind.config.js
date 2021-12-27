@@ -3,12 +3,9 @@ const colors = require("tailwindcss/colors")
 module.exports = {
 	purge: [],
 	presets: [],
-	darkMode: "class",
-	// or 'media' or 'class'
-	// prefix: "tw-",
+	darkMode: false, // or 'media' or 'class'
 	theme: {
 		screens: {
-			xs: "320px",
 			sm: "640px",
 			md: "768px",
 			lg: "1024px",
@@ -29,6 +26,10 @@ module.exports = {
 			indigo: colors.indigo,
 			purple: colors.violet,
 			pink: colors.pink,
+
+			primary: "#0089ff",
+			secondary: "#687992",
+			light: "#e5efff",
 		},
 		spacing: {
 			px: "1px",

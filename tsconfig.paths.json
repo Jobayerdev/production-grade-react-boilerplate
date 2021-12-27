@@ -2,8 +2,8 @@
 	"compilerOptions": {
 		"baseUrl": ".",
 		"paths": {
-			"@shared/*": ["./src/@shared/*"],
-			"@modules/*": ["./src/@modules/*"]
+			"@application/*": ["./src/@application/*"],
+			"@features/*": ["./src/@features/*"]
 		}
 	}
 }
