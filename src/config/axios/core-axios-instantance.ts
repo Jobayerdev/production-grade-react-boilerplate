@@ -1,15 +1,15 @@
-import axios, { AxiosError } from "axios"
+import axios, { AxiosError } from 'axios'
 
-import { ENV } from "../../../ENV"
-import { message } from "antd"
-import { storage } from "@application/utils"
+import { ENV } from './../../ENV'
+import { message } from 'antd'
+import { storage } from '../../utils/util-function'
 
 const headers = {
-	"Content-Type": "application/json",
-	"X-Request-ID": 124,
-	"X-Country-Code": "BD",
-	"X-Client-Name": "CRM",
-	"X-Client-Version": 123,
+	'Content-Type': 'application/json',
+	'X-Request-ID': 124,
+	'X-Country-Code': 'BD',
+	'X-Client-Name': 'CRM',
+	'X-Client-Version': 123,
 	Authorization: `Bearer ${storage?.getToken()}`,
 }
 export const CoreAxiosInstance = axios.create({
@@ -19,7 +19,7 @@ export const CoreAxiosInstance = axios.create({
 })
 CoreAxiosInstance.interceptors.request.use(
 	(config: any) => {
-		config.headers["Authorization"] = `Bearer ${storage?.getToken()}`
+		config.headers['Authorization'] = `Bearer ${storage?.getToken()}`
 		return config
 	},
 	(error: any) => {

@@ -1,4 +1,4 @@
-import { storage } from "@application/utils"
+import { storage } from '../../../utils'
 
 export const useAuth = () => {
 	const loginFn = () => {}
