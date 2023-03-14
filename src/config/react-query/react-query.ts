@@ -1,8 +1,7 @@
-import { QueryClient, UseMutationOptions, UseQueryOptions } from "react-query"
+import { QueryClient, UseMutationOptions, UseQueryOptions } from 'react-query';
 
-import { AxiosError } from "axios"
-import { PromiseValue } from "type-fest"
-
+import Awaited from 'type-fest';
+import { AxiosError } from 'axios';
 export const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
@@ -11,13 +10,12 @@ export const queryClient = new QueryClient({
 			retry: false,
 		},
 	},
-})
+});
 export type QueryConfig<FetcherFnType extends (...args: any) => any> =
-	UseQueryOptions<PromiseValue<ReturnType<FetcherFnType>>>
-
+	UseQueryOptions<Awaited<ReturnType<FetcherFnType>>>;
 export type MutationConfig<FetcherFnType extends (...args: any) => any> =
 	UseMutationOptions<
-		PromiseValue<ReturnType<FetcherFnType>>,
+		Awaited<ReturnType<FetcherFnType>>,
 		AxiosError,
 		Parameters<FetcherFnType>[0]
-	>
+	>;

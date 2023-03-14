@@ -1,40 +1,61 @@
-import jwt_decode from "jwt-decode"
+import jwt_decode from 'jwt-decode';
 
 export const concatFilterQuery = (options: any): string => {
 	return Object.keys(options)
 		.map((x) => {
-			return `${x}=${options[x]}`
+			return `${x}=${options[x]}`;
 		})
-		.join("&")
-}
+		.join('&');
+};
 
-const storagePrefix = "jd_react_"
+const storagePrefix = 'jd_react_';
 export const storage = {
 	getToken: (): string | false => {
-		let item: any = localStorage.getItem(`${storagePrefix}token`)
-		return JSON.parse(item) as string
+		let item: any = localStorage.getItem(`${storagePrefix}token`);
+		return JSON.parse(item) as string;
 	},
-	getDecodedToken: () => {
-		let item: any = localStorage.getItem(`${storagePrefix}token`)
-		return jwt_decode(item)
+	getDecodedToken: (): any => {
+		let item: any = localStorage.getItem(`${storagePrefix}token`);
+		return jwt_decode(item);
 	},
 	setToken: (token: string) => {
-		localStorage.setItem(`${storagePrefix}token`, JSON.stringify(token))
+		localStorage.setItem(`${storagePrefix}token`, JSON.stringify(token));
 	},
 	clear: () => {
-		localStorage.clear()
+		localStorage.clear();
 	},
 	setData(data: any, key: string) {
-		localStorage.setItem(key, JSON.stringify(data))
+		localStorage.setItem(key, JSON.stringify(data));
 	},
 	getDate(key: string) {
-		let item = localStorage.getItem(key)
+		let item = localStorage.getItem(key);
 		if (!item) {
-			return
+			return;
 		}
-		return JSON.parse(item)
+		return JSON.parse(item);
 	},
 	removeData(key: string) {
-		localStorage.removeItem(key)
+		localStorage.removeItem(key);
 	},
-}
+};
+
+export const toSafeArray = (data: any) => {
+	if (
+		!data &&
+		!Array.isArray(data) &&
+		data?.length === 0 &&
+		data?.length === undefined &&
+		data?.length === null &&
+		data?.length === ''
+	) {
+		return [];
+	}
+	return data;
+};
+
+export const removeIFrameInRootHtml = () => {
+	const iframe = document.getElementById('iframe');
+	if (iframe) {
+		iframe.remove();
+	}
+};

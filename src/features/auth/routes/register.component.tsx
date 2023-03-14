@@ -1,17 +1,19 @@
-import { Button, Card, Checkbox, Form, Input, Space, Typography } from 'antd'
-import { LockOutlined, UserOutlined } from '@ant-design/icons'
+import { Button, Card, Form, Input, Typography } from 'antd';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
-import { IMAGES } from '../../../assets/index'
-import React from 'react'
+import { IMAGES } from '../../../assets/index';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 const Register = () => {
-	const onFinish = (values: any) => {}
+	const { registerFn } = useAuth();
+	const onFinish = (values: any) => {
+		registerFn.mutate(values);
+	};
 	return (
 		<div
 			className='auth-page'
 			style={{
-				cursor: 'not-allowed',
-				opacity: 0.5,
 				minHeight: '100vh',
 				minWidth: '100vw',
 				display: 'flex',
@@ -21,35 +23,72 @@ const Register = () => {
 				backgroundSize: 'cover',
 				backgroundPosition: 'center right',
 				backgroundRepeat: 'no-repeat',
-			}}>
+			}}
+		>
 			<Card
 				style={{
 					maxWidth: '500px',
 					width: '100%',
 					boxShadow: '0 0 20px #0815420d',
 					borderRadius: 10,
-				}}>
+				}}
+			>
 				<img
-					style={{ maxWidth: 180, margin: '20px auto', display: 'block' }}
+					style={{ maxWidth: 100, margin: '20px auto', display: 'block' }}
+					className='rounded-md'
 					src={IMAGES.Logo}
 					alt=''
 				/>
 				<Typography.Title
 					level={2}
-					style={{ textAlign: 'center', marginBottom: 30 }}>
+					style={{ textAlign: 'center', marginBottom: 30 }}
+				>
 					Register
 				</Typography.Title>
 				<Form
 					name='normal_Register'
 					className='Register-form'
-					initialValues={{ remember: true }}
-					onFinish={onFinish}>
+					initialValues={{
+						firstName: '',
+						lastName: '',
+						email: '',
+						password: '',
+					}}
+					onFinish={onFinish}
+				>
+					<Form.Item
+						name='firstName'
+						rules={[
+							{ required: true, message: 'Please input your first Name!' },
+						]}
+					>
+						<Input
+							type='text'
+							size='large'
+							prefix={<UserOutlined className='site-form-item-icon' />}
+							placeholder='firstName'
+						/>
+					</Form.Item>
+					<Form.Item
+						name='lastName'
+						rules={[
+							{ required: true, message: 'Please input your last Name!' },
+						]}
+					>
+						<Input
+							type='text'
+							size='large'
+							prefix={<UserOutlined className='site-form-item-icon' />}
+							placeholder='lastName'
+						/>
+					</Form.Item>
 					<Form.Item
 						name='email'
 						rules={[
 							{ required: true, message: 'Please input your email!' },
 							{ type: 'email', message: 'Invalid Email' },
-						]}>
+						]}
+					>
 						<Input
 							type='email'
 							size='large'
@@ -59,9 +98,8 @@ const Register = () => {
 					</Form.Item>
 					<Form.Item
 						name='password'
-						rules={[
-							{ required: true, message: 'Please input your Password!' },
-						]}>
+						rules={[{ required: true, message: 'Please input your Password!' }]}
+					>
 						<Input
 							size='large'
 							prefix={<LockOutlined className='site-form-item-icon' />}
@@ -70,28 +108,25 @@ const Register = () => {
 						/>
 					</Form.Item>
 					<Form.Item>
-						<Space style={{ display: 'flex', justifyContent: 'space-between' }}>
-							<Form.Item name='remember' valuePropName='checked' noStyle>
-								<Checkbox>Remember me</Checkbox>
-							</Form.Item>
-							{/* <a href="/">Forgot password</a> */}
-						</Space>
-					</Form.Item>
-					<Form.Item>
 						<Button
-							loading={false}
+							loading={registerFn.isLoading}
 							size='large'
 							style={{ display: 'block', width: '100%' }}
 							type='primary'
-							htmlType='submit'>
-							Sign in
+							htmlType='submit'
+						>
+							Sign Up
 						</Button>
 					</Form.Item>
-					{/* Or <a href="/">register now!</a> */}
+					<Form.Item>
+						<Typography.Text type='secondary'>
+							Already have an account? <Link to='/login'>Login</Link>
+						</Typography.Text>
+					</Form.Item>
 				</Form>
 			</Card>
 		</div>
-	)
-}
+	);
+};
 
-export default Register
+export default Register;

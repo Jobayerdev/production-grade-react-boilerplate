@@ -1,8 +1,8 @@
-import React from 'react'
-import { WinterLayout } from '../../../themes'
+import { AppLayout } from '../../../themes';
+import React from 'react';
 
 const DefaultDashboardPage = () => {
-	return <WinterLayout pageTitle='Dashboard'>DefaultDashboardPage</WinterLayout>
-}
+	return <AppLayout pageTitle='Dashboard'>DefaultDashboardPage</AppLayout>;
+};
 
-export default DefaultDashboardPage
+export default DefaultDashboardPage;

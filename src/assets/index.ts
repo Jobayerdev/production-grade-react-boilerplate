@@ -1,4 +1,4 @@
 export const IMAGES = {
-	Logo: require("./img/logo.jpg").default,
-	LightBd: require("./img/bg.jpg").default,
-}
+	Logo: require('./img/logo.png').default,
+	LightBd: require('./img/bg.jpg').default,
+};
